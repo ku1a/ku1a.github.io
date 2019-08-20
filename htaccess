@@ -1,0 +1,9 @@
+RewriteEngine On
+ RewriteCond %{HTTP_HOST} ^(v.)?qikula.me$
+ RewriteCond %{REQUEST_URI} !^/v/
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ /v/$1
+ RewriteCond %{HTTP_HOST} ^(v.)?qikula.me$
+ RewriteRule ^(/)?$ v/index.php [L]
